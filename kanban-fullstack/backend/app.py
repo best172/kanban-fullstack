@@ -19,7 +19,11 @@ if not supabase_url or not supabase_key:
 else:
     db = create_client(supabase_url, supabase_key)
 
-origins = [x.strip() for x in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",") if x.strip()]
+origins = [
+    "http://localhost:5173",
+    "https://kanban-fullstack-2ngoskd5h-kamolpol.vercel.app",
+    "https://kanban-fullstack-three.vercel.app",
+]
 
 app = FastAPI(title="Kanban Board API", version="1.0.0")
 app.add_middleware(
