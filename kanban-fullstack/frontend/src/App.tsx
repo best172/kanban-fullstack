@@ -3,7 +3,7 @@ import { Plus, Trash2, ArrowRight, RefreshCw, CheckCircle2, Circle, Clock3 } fro
 
 type Status = 'todo' | 'doing' | 'done'
 type Card = { id: string; title: string; status: Status; created_at?: string }
-const API = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '')
+const API = (import.meta.env.VITE_API_URL || 'https://kanban-fullstack-1-f6v0.onrender.com').replace(/\/$/, '')
 const columns: { key: Status; label: string; icon: typeof Circle; hint: string }[] = [
   { key: 'todo', label: 'To do', icon: Circle, hint: 'Ready when you are' },
   { key: 'doing', label: 'Doing', icon: Clock3, hint: 'Work in progress' },
